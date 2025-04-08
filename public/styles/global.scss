@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-poppins: var(--font-poppins);
+  --font-openSans: var(--font-open-sans);
+  --color-ascent-text: #1B2057;
+  --color-ascent-red: #E93323;
+}
+
+
+body {
+  @apply font-poppins text-ascent-text;
+
+  .wrapper {
+    @apply overflow-x-clip;
+  }
+
+  a {
+    @apply transition-all duration-300;
+  }
+}
+
+.container {  
+  @apply mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-[160px];
+
+  .title-section {
+    @apply text-[24px] md:text-[32px] font-medium leading-[150%] text-ascent-text mb-[30px] md:mb-[66px];
+  }
+}
+
+.slider-container {
+  @apply -mx-4;
+  .slick-track {
+    @apply flex py-5 pt-10;
+
+    .slick-slide {
+      @apply float-none h-auto;
+
+      > div {
+        @apply h-full;
+      }
+
+      .card-testimonial {
+        @apply p-6 pt-0 rounded-md h-full;
+        border-radius: 6px;
+        border: 1px solid #1B2057;
+        background: linear-gradient(180deg, #F2F2F2 0%, #FFF 100%);
+
+        .avatar {
+          @apply w-[78px] h-[78px] rounded-full border border-ascent-text shadow-[3px_3px_6px_0px_rgba(0,0,0,0.25)] bg-gray-400 mb-[27px] -mt-[40px];
+        }
+      }
+    }
+  }
+  .slick-arrow {
+    @apply w-[17px] h-[31px] before:hidden;
+
+    &.slick-prev {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="31" viewBox="0 0 17 31" fill="none"><g clip-path="url(%23clip0_4_130)"><path d="M15.8301 29.2701L1.59009 15.03L15.8301 0.800049" stroke="%23FF0000" stroke-width="2.25" stroke-miterlimit="10"/></g><defs><clipPath id="clip0_4_130"><rect width="16.62" height="30.06" fill="white"/></clipPath></defs></svg>') center center no-repeat !important;
+    }
+
+    &.slick-next {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="31" viewBox="0 0 17 31" fill="none"><g clip-path="url(%23clip0_4_133)"><path d="M0.790032 0.790007L15.03 15.03L0.79003 29.26" stroke="%23FF0000" stroke-width="2.25" stroke-miterlimit="10"/></g><defs><clipPath id="clip0_4_133"><rect width="16.62" height="30.06" fill="white" transform="translate(16.6201 30.0601) rotate(-180)"/></clipPath></defs></svg>') center center no-repeat !important;
+    }
+  }
+}
+
+.latest-news {
+  @apply relative;
+  &::before {
+      content: '';
+      background: url('/imgs/small-ornament.svg') no-repeat bottom left;
+      @apply absolute top-0 left-0 w-full h-full pointer-events-none;
+  }
+}
+
+.category-container {
+  @apply px-5 sm:px-10;
+
+  .slick-arrow {
+    @apply w-[17px] h-[31px] before:hidden;
+
+    &.slick-prev {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="31" viewBox="0 0 17 31" fill="none"><g clip-path="url(%23clip0_4_130)"><path d="M15.8301 29.2701L1.59009 15.03L15.8301 0.800049" stroke="%231B2057" stroke-width="2.25" stroke-miterlimit="10"/></g><defs><clipPath id="clip0_4_130"><rect width="16.62" height="30.06" fill="white"/></clipPath></defs></svg>') center center no-repeat !important;
+    }
+
+    &.slick-next {
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="31" viewBox="0 0 17 31" fill="none"><g clip-path="url(%23clip0_4_133)"><path d="M0.790032 0.790007L15.03 15.03L0.79003 29.26" stroke="%231B2057" stroke-width="2.25" stroke-miterlimit="10"/></g><defs><clipPath id="clip0_4_133"><rect width="16.62" height="30.06" fill="white" transform="translate(16.6201 30.0601) rotate(-180)"/></clipPath></defs></svg>') center center no-repeat !important;
+    }
+  }
+}
+
+.news-section,
+.teams-section {
+    background: url('/imgs/ascentgraph.svg') no-repeat bottom center;
+    background-size: 100% auto;
+}
+
+.contents {
+  p {
+    @apply text-[12px]/[200%] mb-[20px];
+
+    a {
+      @apply text-[#f00] hover:underline;
+    }
+  }
+}
+
+.content-portfolio {
+  p {
+    @apply text-[14px]/[200%] mb-[20px];
+
+    a {
+      @apply text-[#f00] hover:underline;
+    }
+  }
+}
