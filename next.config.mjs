@@ -1,7 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['localhost', 'cdn.dummyjson.com', '212.85.24.190', 'api.ascentgroup.vc'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'cdn.dummyjson.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'api.ascentgroup.vc',
+            },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+            },
+        ],
     },
 };
 
