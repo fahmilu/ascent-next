@@ -1,5 +1,12 @@
 import Banner from "@/components/Banner";
 
+export async function generateMetadata() {   
+    return {
+      title: 'Partner With Us | ' + process.env.NEXT_PUBLIC_COMPANY_NAME,
+      description: '',
+    }
+}
+
 const ContactPage = () => {
     return (
         <>

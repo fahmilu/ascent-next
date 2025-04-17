@@ -3,7 +3,6 @@ import { usePathname } from 'next/navigation';
 
 const Desktop = ({ navigation }) => {
     const pathname = usePathname();
-    console.log(pathname);
     return (
         <nav className="hidden md:flex h-[48px] items-end">
         {navigation.map((item) => {

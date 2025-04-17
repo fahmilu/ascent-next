@@ -5,18 +5,22 @@ import Widget from "@/components/Portfolio/Detail/widget";
 import Linkedin from "@/components/Portfolio/Detail/Linkedin";
 import LinkOutside from "@/components/Portfolio/Detail/Link";
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }) {   
+    const { slug } = await params
+    const portfolio = await fetch(`${process.env.NEXT_PUBLIC_API}/portfolios/${slug}`).then((res) => res.json());
     return {
-        title: 'Detail Portfolio | Ascent',
-        description: '',
+      title: portfolio.data.title + ' | ' + process.env.NEXT_PUBLIC_COMPANY_NAME,
+      description: portfolio.data.intro,
     }
 }
 
 export default async function Page({ params }) {
     const { slug } = await params
+    const portfolio = await fetch(`${process.env.NEXT_PUBLIC_API}/portfolios/${slug}`).then((res) => res.json());
+    console.log(portfolio);
     return (
         <>
-            <Banner title="Our Portfolio" />
+            <Banner title={'Our Portfolio'} />
             <section className="pt-[20px] pb-[40px] xl:py-[47px]">
                 <div className="container">
                     <Link href="/portfolio" className="flex items-center gap-[21px] mb-5 md:mb-[100px]">
@@ -35,40 +39,58 @@ export default async function Page({ params }) {
                     <div className="flex flex-col lg:flex-row gap-[40px] xl:gap-[128px]">
                         <div className="lg:min-w-[320px]">
                             <div className="relative h-[70px] mb-5 md:mb-20">
-                                <Image src="/imgs/dummy/logo/1.svg" alt="Detail Portfolio" fill className="object-contain lg:object-left" />
+                                <Image src={portfolio.data.image_url || `https://api.ascentgroup.vc/storage/${portfolio.data.image}`} alt="Detail Portfolio" fill className="object-contain lg:object-left" />
                             </div>
-                            <Widget title="Industry">
-                                Consumer
-                            </Widget>
-                            <Widget title="Country">
-                                Indonesia
-                            </Widget>
-                            <Widget title="Founder">
-                                <div className="flex flex-col gap-2">
-                                    <Linkedin name="Sony Rachmadi Purnomo" linkedin="https://www.linkedin.com/in/sony-rachmadi-purnomo-b71110120/" />
-                                    <Linkedin name="John Appleseed" linkedin="https://www.linkedin.com/in/sony-rachmadi-purnomo-b71110120/" />
-                                </div>
-                            </Widget>
-                            <Widget title="Stage">
-                                Early
-                            </Widget>
-                            <Widget title="Partner Since">
-                                August 2021
-                            </Widget>
+                            {portfolio.data.industry && (
+                                <Widget title="Industry">
+                                    {portfolio.data.industry}
+                                </Widget>
+                            )}
+                            {portfolio.data.country && (
+                                <Widget title="Country">
+                                    {portfolio.data.country}
+                                </Widget>
+                            )}
+                            {portfolio.data.founders.length > 0 && (
+                                <Widget title="Founder">
+                                    <div className="flex flex-col gap-2">
+                                        {portfolio.data.founders.map((founder) => (
+                                            <Linkedin key={founder.id} name={founder.name} linkedin={founder.linkedin_url} />
+                                        ))}
+                                    </div>
+                                </Widget>
+                            )}
+                            {portfolio.data.stage && (
+                                <Widget title="Stage">
+                                    {portfolio.data.stage}
+                                </Widget>
+                            )}
+                            {portfolio.data.partner_since && (
+                                <Widget title="Partner Since">
+                                    {portfolio.data.partner_since}
+                                </Widget>
+                            )}
                         </div>
                         <div className="flex-grow flex flex-col justify-start gap-5 lg:gap-[100px]">
                             <div className="flex gap-y-2 gap-5 md:gap-[30px] md:order-first order-last flex-wrap">
-                                <LinkOutside href="https://www.runsystem.id/">Website</LinkOutside>
-                                <LinkOutside href="https://www.runsystem.id/">Linkedin</LinkOutside>
-                                <LinkOutside href="https://www.runsystem.id/">Instagram</LinkOutside>
+                                {portfolio.data.website && (
+                                    <LinkOutside href={portfolio.data.website}>Website</LinkOutside>
+                                )}
+                                {portfolio.data.linkedin && (
+                                    <LinkOutside href={portfolio.data.linkedin}>Linkedin</LinkOutside>
+                                )}
+                                {portfolio.data.instagram && (
+                                    <LinkOutside href={portfolio.data.instagram}>Instagram</LinkOutside>
+                                )}
                             </div>
                             <div className="pt-[22px] border-t border-[#B3B3B3]">
-                                <h2 className="title-section !mb-[20px]">RUN System</h2>
+                                {portfolio.data.title && (
+                                    <h2 className="title-section !mb-[20px]">{portfolio.data.title}</h2>
+                                )}
+                                {portfolio.data.intro && (
                                 <h3 className="text-[20px] font-medium leading-[141%] mb-[20px]">Integrated ERP Software in Indonesia and SEA</h3>
-                                <div className="content-portfolio">
-                                    <p>The main strength of RUN System is their extensive expertise and experience in planning, designing, building and implementing Information Technology Solutions for all integrated business processes. The rapidly changing business competition gives us more energy to develop products that can meet all consumer needs. The RUN System as a superior product is a manifestation of all our souls resulting from the selection and sorting of the best technology that is tailored to the situation, conditions and corporate culture in Indonesia which has its own uniqueness.</p>
-                                    <p>Currently, RUN System has 3 Gold Business Partners and 1 Silver Business Partners, both as Distribution Partners and Implementation Partners which prove that RUN System is the best ERP Software in Southeast Asia, with the support of “RUNers” (RUN System stakeholders) both technology expert or business process specialist.</p>
-                                </div>
+                                )}
+                                <div className="content-portfolio" dangerouslySetInnerHTML={{ __html: portfolio.data.description }} />
                             </div>
                         </div>
                     </div>

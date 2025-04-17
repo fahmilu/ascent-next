@@ -1,6 +1,6 @@
 const Linkedin = ({ name, linkedin }) => {
     return (
-        <a href={linkedin} className="flex items-center gap-[10px]">
+        <a href={linkedin} className="flex items-center gap-[10px]" target="_blank" rel="noopener noreferrer">
         {name}
         <svg xmlns="http://www.w3.org/2000/svg" width={14} height={14} viewBox="0 0 14 14" fill="none">
             <g clipPath="url(#clip0_8_280)">

@@ -2,16 +2,18 @@ import Banner from "@/components/Banner";
 import PortfolioComponent from "@/components/Portfolio";
 
 export async function generateMetadata() {   
+    const portfolio = await fetch(`${process.env.NEXT_PUBLIC_API}/pages/our-portfolio`).then((res) => res.json());
     return {
-      title: 'Our Portfolio | Ascent',
-      description: '',
+      title: `${portfolio.data.title} | ${process.env.NEXT_PUBLIC_COMPANY_NAME}`,
+      description: portfolio.data.description,
     }
-}
+  }
 
-const Portfolio = () => {
+const Portfolio = async () => {
+    const portfolio = await fetch(`${process.env.NEXT_PUBLIC_API}/pages/our-portfolio`).then((res) => res.json());
     return (
         <>
-            <Banner title="Our Portfolio" />
+            <Banner title={portfolio.data.title} />
             <PortfolioComponent />
         </>
     );

@@ -18,10 +18,10 @@ const Footer = ({ navigation }) => {
                             ))}
                         </div>
                     </div>
-                    <div className="flex flex-col justify-between items-center lg:items-end gap-y-5 lg:gap-y-0">
-                        <div className={`max-w-[300px] text-[12px]/[199%] text-center lg:text-left lg:mb-10`}>
-                            Jl. Jendral Gatot Subroto Kav. 52 Jakarta. Indonesia
-                            info@ascentgroup.vc
+                    <div className="flex flex-col justify-between items-center lg:items-end gap-y-5 lg:gap-y-0 max-w-[310px]">
+                        <div className={`text-[12px]/[199%] text-center lg:text-left lg:mb-10`}>
+                            Jl. Jendral Gatot Subroto Kav. 52 Jakarta. Indonesia <br />
+                            <Link href={`mailto:info@ascentgroup.vc`}>info@ascentgroup.vc</Link>
                         </div>
                         <div className={`text-[12px]/[199%] text-center lg:text-left`}>
                             Copyright &copy; 2025 Ascent Group - All rights reserved

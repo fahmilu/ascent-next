@@ -4,11 +4,11 @@ import useSWR from "swr";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import Image from "next/image";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Testimonial = () => {
-  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API_DOMAIN}/quotes`,
+  const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API}/testimonials`,
     fetcher
   );
 
@@ -44,16 +44,18 @@ const Testimonial = () => {
   return (
     <section className="pt-[50px] pb-[80px] md:pt-[100px] md:pb-[150px] z-10 relative">
       <div className="container">
-        <h2 className="title-section">Our Value</h2>
+        <h2 className="title-section" data-aos="fade-up" data-aos-delay="100">Our Value</h2>
         <div className="slider-container px-5 lg:px-0">
           <Slider {...settings}>
-            {data.quotes.slice(0, 6).map((quote) => (
-              <div key={quote.id} className="px-4 h-full">
-                <div className="card-testimonial">
-                  <div className="avatar"></div>
-                  <div className="text-[12px] leading-[155%] mb-5">{quote.quote}</div>
-                  <div className="text-[12px] leading-[155%] font-bold">{quote.author}</div>
-                  <div className="text-[12px] leading-[155%]">CEO, RUN System</div>
+            {data.data.slice(0, 6).map((item) => (
+              <div key={item.id} className="px-4 h-full">
+                <div className="card-testimonial" data-aos="fade-up" data-aos-delay="100">
+                  <div className="avatar">
+                    <Image src={item.image_url} alt={item.name} fill className="object-cover" />
+                  </div>
+                  <div className="text-[12px] leading-[155%] mb-5">{item.content}</div>
+                  <div className="text-[12px] leading-[155%] font-bold">{item.name}</div>
+                  <div className="text-[12px] leading-[155%]">{item.position}</div>
                 </div>
               </div>
             ))}

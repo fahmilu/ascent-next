@@ -47,7 +47,7 @@ body {
         background: linear-gradient(180deg, #F2F2F2 0%, #FFF 100%);
 
         .avatar {
-          @apply w-[78px] h-[78px] rounded-full border border-ascent-text shadow-[3px_3px_6px_0px_rgba(0,0,0,0.25)] bg-gray-400 mb-[27px] -mt-[40px];
+          @apply w-[78px] h-[78px] rounded-full border border-ascent-text shadow-[3px_3px_6px_0px_rgba(0,0,0,0.25)] bg-gray-400 mb-[27px] -mt-[40px] relative overflow-hidden;
         }
       }
     }
@@ -114,4 +114,10 @@ body {
       @apply text-[#f00] hover:underline;
     }
   }
+}
+
+.news-card {
+  @apply border border-[#B3B3B3] rounded-md overflow-clip p-[28px];
+  border: 1px solid #B3B3B3;
+  background: linear-gradient(180deg, #F2F2F2 0%, #F9F9F9 38.46%, #FFF 86.06%);
 }
