@@ -36,7 +36,7 @@ const Banner = () => {
         <div className="relative z-20 bg-[#1B2057]">
             <Image src="/imgs/home-banner.jpg" alt="Home Banner" fill  data-aos="fade-in" data-aos-delay="100" />
             <div className="container relative h-[420px] sm:h-[727px] sm:pt-[260px]">
-                <div className="flex flex-col sm:items-start sm:justify-start justify-end pb-[40px] sm:pb-0 h-full relative z-[1]">
+                <div className="flex flex-col sm:items-start sm:justify-start justify-end pb-[40px] sm:pb-0 h-full relative z-100">
                     <div className={`absolute top-[30px] left-[-60px] w-[45px] aspect-square animate-bounce`}>
                         <Image src="/imgs/down-arrow.png" alt="Home Banner" fill  data-aos="fade-down"  data-aos-delay="1500" />
                     </div>
@@ -47,7 +47,7 @@ const Banner = () => {
                     </h1>
                 </div>
                 <div 
-                    className={`absolute z-10 bottom-[-62px] right-[-50%] sm:right-[-93px] w-[500px] sm:w-[600px] aspect-square will-change-transform`} 
+                    className={`absolute z-10 bottom-[-62px] right-[-40%] sm:right-[-93px] w-[250px] sm:w-[400px] lg:w-[600px] aspect-square will-change-transform`} 
                     style={{
                         transform: `translateX(${Math.min(scrollY * 0.6, 1000)}px) rotate(${Math.min(scrollY * 0.2, 450)}deg)`,
                         opacity: Math.max(1 - scrollY * 0.002, 0),
@@ -55,7 +55,6 @@ const Banner = () => {
                         transformOrigin: 'center center'
                     }}
                 >
-                    {/* <Image src="/imgs/graphbanner.svg" alt="Home Banner" className="motion-safe:animate-[spin_100s_linear_infinite]" fill /> */}
                     <Image src="/imgs/graphbanner.svg" alt="Home Banner" data-aos="fade-in" data-aos-delay="1000" fill />
                 </div>
             </div>

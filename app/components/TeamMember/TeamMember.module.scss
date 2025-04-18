@@ -9,15 +9,17 @@
 }
 
 .teamMemberPopup {
-    border-radius: 6px;
-    border: 1px solid #B3B3B3;
     background: linear-gradient(180deg, #F2F2F2 0%, #FFF 100%);
     @apply max-w-[948px] w-full relative;
 }
 
 .teamMemberPopupImage {
-    border-radius: 6px 0px 0px 6px;
-    border: 1px solid #B3B3B3;
+
     background: linear-gradient(0deg, #95B5DF 0%, #1B2057 100%);
     @apply relative;
+
+    @media (min-width: 768px) {
+        border-radius: 6px 0px 0px 6px;
+        border: 1px solid #B3B3B3;
+    }
 }

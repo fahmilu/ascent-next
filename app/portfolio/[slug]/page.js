@@ -36,9 +36,9 @@ export default async function Page({ params }) {
                         </svg>
                         <div className="text-[20px] uppercase tracking-[2px] font-medium leading-[150%]">Back</div>
                     </Link>
-                    <div className="flex flex-col lg:flex-row gap-[40px] xl:gap-[128px]">
-                        <div className="lg:min-w-[320px]">
-                            <div className="relative h-[70px] mb-5 md:mb-20">
+                    <div className="flex flex-col md:flex-row gap-[40px] xl:gap-[128px]">
+                        <div className="lg:min-w-[320px] md:min-w-[200px] order-last md:order-first">
+                            <div className="relative h-[70px] mb-5 md:mb-20 hidden md:block">
                                 <Image src={portfolio.data.image_url || `https://api.ascentgroup.vc/storage/${portfolio.data.image}`} alt="Detail Portfolio" fill className="object-contain lg:object-left" />
                             </div>
                             {portfolio.data.industry && (
@@ -53,7 +53,7 @@ export default async function Page({ params }) {
                             )}
                             {portfolio.data.founders.length > 0 && (
                                 <Widget title="Founder">
-                                    <div className="flex flex-col gap-2">
+                                    <div className="flex flex-col items-center md:items-start gap-2">
                                         {portfolio.data.founders.map((founder) => (
                                             <Linkedin key={founder.id} name={founder.name} linkedin={founder.linkedin_url} />
                                         ))}
@@ -72,6 +72,9 @@ export default async function Page({ params }) {
                             )}
                         </div>
                         <div className="flex-grow flex flex-col justify-start gap-5 lg:gap-[100px]">
+                            <div className="relative h-[70px] mb-5 md:mb-20 md:hidden block">
+                                <Image src={portfolio.data.image_url || `https://api.ascentgroup.vc/storage/${portfolio.data.image}`} alt="Detail Portfolio" fill className="object-contain lg:object-left" />
+                            </div>
                             <div className="flex gap-y-2 gap-5 md:gap-[30px] md:order-first order-last flex-wrap">
                                 {portfolio.data.website && (
                                     <LinkOutside href={portfolio.data.website}>Website</LinkOutside>

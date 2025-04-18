@@ -21,7 +21,7 @@ body {
 }
 
 .container {  
-  @apply mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-[160px];
+  @apply mx-auto max-w-[1440px] px-6 sm:px-10 md:px-20 lg:px-[160px];
 
   .title-section {
     @apply text-[24px] md:text-[32px] font-medium leading-[150%] text-ascent-text mb-[30px] md:mb-[66px];
@@ -41,13 +41,13 @@ body {
       }
 
       .card-testimonial {
-        @apply p-6 pt-0 rounded-md h-full;
+        @apply p-4 sm:p-6 pt-0 rounded-md h-full;
         border-radius: 6px;
         border: 1px solid #1B2057;
         background: linear-gradient(180deg, #F2F2F2 0%, #FFF 100%);
 
         .avatar {
-          @apply w-[78px] h-[78px] rounded-full border border-ascent-text shadow-[3px_3px_6px_0px_rgba(0,0,0,0.25)] bg-gray-400 mb-[27px] -mt-[40px] relative overflow-hidden;
+          @apply w-[78px] h-[78px] rounded-full border border-ascent-text shadow-[3px_3px_6px_0px_rgba(0,0,0,0.25)] bg-gray-400 mb-4 sm:mb-[27px] -mt-[40px] relative overflow-hidden;
         }
       }
     }
@@ -69,7 +69,9 @@ body {
   @apply relative;
   &::before {
       content: '';
-      background: url('/imgs/small-ornament.svg') no-repeat bottom left;
+      @media (min-width: 768px) {
+        background: url('/imgs/small-ornament.svg') no-repeat bottom left;
+      }
       @apply absolute top-0 left-0 w-full h-full pointer-events-none;
   }
 }

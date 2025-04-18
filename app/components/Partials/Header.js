@@ -48,7 +48,7 @@ const Header = ({ navigation }) => {
       <div className="container relative z-[1]"  data-aos='fade-down' data-aos-delay='500'>
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 w-[134px] h-[40px] sm:w-[160px] sm:h-[49px] relative">
+          <div className="flex-shrink-0 w-[120px] h-[35px] sm:w-[160px] sm:h-[49px] relative">
             <Link href="/">
               <Image
                 src={isMobileMenuOpen ? '/imgs/logo-footer.svg' : '/imgs/logo.svg'}

@@ -48,7 +48,7 @@ const Testimonial = () => {
         <div className="slider-container px-5 lg:px-0">
           <Slider {...settings}>
             {data.data.slice(0, 6).map((item) => (
-              <div key={item.id} className="px-4 h-full">
+              <div key={item.id} className="sm:px-4 h-full">
                 <div className="card-testimonial" data-aos="fade-up" data-aos-delay="100">
                   <div className="avatar">
                     <Image src={item.image_url} alt={item.name} fill className="object-cover" />
