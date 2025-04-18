@@ -18,7 +18,7 @@ const LatestNews = () => {
                 <div className={`absolute hidden lg:block -top-[1200px] -right-[1000px] w-[1900px] h-[1900px] pointer-events-none`}>
                     <Image src={`/imgs/big-ornament.svg`} alt={`ornament`} fill className={`object-cover`} />
                 </div>
-                <h2 className="title-section z-10 relative" data-aos="fade-up" data-aos-delay="100">Latest News</h2>
+                <h2 className="title-section z-10 relative" data-aos="fade-up" data-aos-delay="100">Featured Articles</h2>
                 <div className=' z-10 relative'>
                     {!data ?
                         <div className={`text-white text-[16px] flex-col items-center justify-center font-medium leading-[150%] text-center flex-grow`}>
@@ -29,7 +29,7 @@ const LatestNews = () => {
                         :
                         <>
                             <div className={`hidden sm:grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-[30px] flex-grow`}>
-                                {data.data.map((news) => (
+                                {data.data.slice(0, 3).map((news) => (
                                     <a href={`${news.external_url}`} target="_blank" key={news.id} className={`news-card`} data-aos="fade-up" data-aos-delay="100">
                                         <div className={`relative w-[90px] h-[80px] mb-4 group`}>
                                             {news.source.logo_url && (
@@ -58,6 +58,9 @@ const LatestNews = () => {
                                         </div>
                                     </a>
                                 ))}
+                            </div>
+                            <div className={`flex mt-[30px] sm:mt-[100px]`}>
+                                <Link href="/news" className={`text-[16px] md:text-[18px] font-medium leading-[150%] text-white bg-[#F00] px-[20px] py-[10px] rounded-[8px] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] hover:bg-[#840000]`} data-aos="fade-up" data-aos-delay="1000">VIEW ALL ARTICLES →</Link>
                             </div>
                         </>
                     }
