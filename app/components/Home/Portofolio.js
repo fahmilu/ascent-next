@@ -33,7 +33,7 @@ const Portofolio = () => {
                         </div>
                      :
                         <div className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[10px] sm:gap-[10px] xl:gap-[28px] flex-grow`}>
-                            {data.data.slice(0, 12).map((product) => (
+                            {data.data.slice(0, 6).map((product) => (
                                 <Link href={`/portfolio`} key={product.id} className={`relative w-full h-[100px] md:h-[75px] bg-white group`} data-aos="fade-up" data-aos-delay="1000">
                                     <Image src={product.image_url} alt={product.title} fill className={`object-contain max-w-[80%] max-h-[55px] !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 grayscale group-hover:grayscale-0 transition-all duration-300`} />
                                 </Link>
