@@ -38,7 +38,7 @@ export default async function Page({ params }) {
                     </Link>
                     <div className="flex flex-col md:flex-row gap-[40px] xl:gap-[128px]">
                         <div className="lg:min-w-[320px] md:min-w-[200px] order-last md:order-first">
-                            <div className="relative h-[70px] mb-5 md:mb-20 hidden md:block">
+                            <div className="relative h-[70px] mb-5 md:mb-[54px] hidden md:block">
                                 <Image src={portfolio.data.image_url || `https://api.ascentgroup.vc/storage/${portfolio.data.image}`} alt="Detail Portfolio" fill className="object-contain lg:object-left" />
                             </div>
                             {portfolio.data.industry && (
@@ -75,7 +75,7 @@ export default async function Page({ params }) {
                             <div className="relative h-[70px] mb-5 md:mb-20 md:hidden block">
                                 <Image src={portfolio.data.image_url || `https://api.ascentgroup.vc/storage/${portfolio.data.image}`} alt="Detail Portfolio" fill className="object-contain lg:object-left" />
                             </div>
-                            <div className="flex gap-y-2 gap-5 md:gap-[30px] md:order-first order-last flex-wrap">
+                            <div className="flex gap-y-2 gap-5 md:gap-[30px] md:order-first order-last flex-wrap min-h-6">
                                 {portfolio.data.website && (
                                     <LinkOutside href={portfolio.data.website}>Website</LinkOutside>
                                 )}
