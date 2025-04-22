@@ -13,8 +13,6 @@ const TeamMember = ({ data }) => {
         <>
             <div 
                 className={`${styles.teamMember} cursor-pointer h-[250px] md:h-[400px] overflow-hidden flex flex-col items-center transition-all duration-300 group relative`} 
-                data-aos='fade-up' 
-                data-aos-delay='2000'
                 onClick={() => setShowPopup(true)}
             >
                 <div className="absolute bottom-0 right-0 opacity-0 translate-x-[10px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">

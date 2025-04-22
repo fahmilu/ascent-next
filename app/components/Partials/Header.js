@@ -19,12 +19,12 @@ const Header = ({ navigation }) => {
   useEffect(() => {
     const controlHeader = () => {
       if (typeof window !== 'undefined') {
-        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        if (window.scrollY > lastScrollY && window.scrollY > 0) {
           setIsVisible(false);
         } else {
           setIsVisible(true);
         }
-        if (window.scrollY > 100) {
+        if (window.scrollY > 0) {
           setIsTop(false);
         } else {
           setIsTop(true);

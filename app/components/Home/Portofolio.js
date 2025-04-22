@@ -33,17 +33,17 @@ const Portofolio = () => {
                         </div>
                      :
                         <>
-                            <div className={`md:hidden grid grid-cols-3 gap-[10px] sm:gap-[10px] xl:gap-[28px] flex-grow`}>
+                            <div className={`md:hidden grid grid-cols-3 gap-[10px] sm:gap-[10px] xl:gap-[28px] flex-grow`} data-aos="fade-up" data-aos-delay="1000">
                                 {data.data.slice(0, 9).map((product) => (
-                                    <Link href={`/portfolio`} key={product.id} className={`relative w-full h-[100px] md:h-[75px] bg-white group`} data-aos="fade-up" data-aos-delay="1000">
-                                        <Image src={product.image_url} alt={product.title} fill className={`object-contain max-w-[80%] max-h-[55px] !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 grayscale group-hover:grayscale-0 transition-all duration-300`} />
+                                    <Link href={`/portfolio`} key={product.id} className={`relative w-full h-[60px] sm:h-[100px] md:h-[75px] bg-white group`}>
+                                        <Image src={product.image_url} alt={product.title} fill className={`object-contain max-w-[60%] max-h-[40%] !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 grayscale group-hover:grayscale-0 transition-all duration-300`} />
                                     </Link>
                                 ))}
                             </div>
-                            <div className={`hidden md:grid grid-cols-4 gap-[10px] sm:gap-[10px] xl:gap-[28px] flex-grow`}>
+                            <div className={`hidden md:grid grid-cols-4 gap-[10px] sm:gap-[10px] xl:gap-[28px] flex-grow`} data-aos="fade-up" data-aos-delay="1000">
                                 {data.data.slice(0, 12).map((product) => (
-                                    <Link href={`/portfolio`} key={product.id} className={`relative w-full h-[100px] md:h-[75px] bg-white group`} data-aos="fade-up" data-aos-delay="1000">
-                                        <Image src={product.image_url} alt={product.title} fill className={`object-contain max-w-[80%] max-h-[55px] !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 grayscale group-hover:grayscale-0 transition-all duration-300`} />
+                                    <Link href={`/portfolio`} key={product.id} className={`relative w-full h-[100px] md:h-[75px] bg-white group`}>
+                                        <Image src={product.image_url} alt={product.title} fill className={`object-contain max-w-[60%] max-h-[40%] !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 grayscale group-hover:grayscale-0 transition-all duration-300`} />
                                     </Link>
                                 ))}
                             </div>

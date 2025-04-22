@@ -81,9 +81,9 @@ const Portofolio = () => {
                             <Link 
                                 href={`/portfolio/${product.slug}`} 
                                 key={product.id} 
-                                className={`relative w-full last:border-r last:border-b last:border-[#B3B3B3] h-[180px] bg-white group ${filteredProducts.length < 4 && `border-t`}`}
+                                className={`relative w-full last:border-r last:border-b last:border-[#B3B3B3] h-[120px] md:h-[180px] bg-white group ${filteredProducts.length < 4 && `border-t`}`}
                             >
-                                <Image src={product.image_url} alt={product.title} fill className={`object-contain max-w-[60%] max-h-[70%] !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:grayscale transition-all duration-300`} />
+                                <Image src={product.image_url} alt={product.title} fill className={`object-contain max-w-[50%] max-h-[40%] !top-1/2 !left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:grayscale transition-all duration-300`} />
                                 <div className="absolute bottom-0 left-0 w-full h-full bg-[#1B2057] opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-6 border-b-[6px] border-[#F00]">
                                     <div>
                                         <div className="text-[20px]/[141%] font-bold text-white mb-2 line-clamp-1">{product.title}</div>

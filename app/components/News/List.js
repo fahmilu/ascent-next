@@ -58,7 +58,7 @@ const NewsList = () => {
     return (
         <section className="pb-[40px] md:pb-[72px]">
             <div className="container">
-                <h2 className="title-section !mb-[24px]">All Articles</h2>
+                <h2 className="title-section !mb-[24px]" data-aos='fade-up' data-aos-delay='1000'>All Articles</h2>
                 {!data ?
                     <div className={`text-white text-[16px] flex-col items-center justify-center font-medium leading-[150%] text-center flex-grow`}>
                         <div>
@@ -67,7 +67,7 @@ const NewsList = () => {
                     </div>
                     :
                     <>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-x-[30px] lg:gap-y-[48px]">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-x-[30px] lg:gap-y-[48px]" data-aos='fade-up' data-aos-delay='1000'>
                             {data.data.slice(0, visibleItems).map((news, index) => (
                                 <div 
                                     key={news.id} 
