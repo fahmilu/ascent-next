@@ -18,8 +18,8 @@ const TeamPage = async () => {
       <Banner title={data.data.title ? data.data.title : 'Our Team'} />
             <section className="md:pt-[72px] md:pb-[140px] pt-[40px] pb-[80px] bg-white teams-section">
                 <div className="container">
-                    <h2 className="title-section max-w-[720px]" data-aos='fade-down' data-aos-delay='1000'>{data.data.components[0] ? data.data.components[0].data.title : 'We are a team of strategic experts paving your way towards success.'}</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-x-[30px] md:gap-y-[34px]" data-aos='fade-up' data-aos-delay='1000'>
+                    <h2 className="title-section max-w-[720px]" data-aos='fade-down'>{data.data.components[0] ? data.data.components[0].data.title : 'We are a team of strategic experts paving your way towards success.'}</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-x-[30px] md:gap-y-[34px]">
                         {teams.data.map((member) => (
                             <TeamMember 
                                 key={member.id}

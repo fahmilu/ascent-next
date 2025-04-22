@@ -19,8 +19,8 @@ const Footer = ({ navigation }) => {
                         </div>
                     </div>
                     <div className="flex flex-col justify-between items-center lg:items-end gap-y-5 lg:gap-y-0 max-w-[310px]">
-                        <div className={`text-[12px]/[199%] text-center lg:text-left lg:mb-10`}>
-                            Jl. Jendral Gatot Subroto Kav. 52 Jakarta. Indonesia <br />
+                        <div className={`text-[12px]/[199%] text-center lg:text-left lg:mb-10 w-full`}>
+                            80 Robinson Road, #08-01, Singapore 068898<br />
                             <Link href={`mailto:info@ascentgroup.vc`}>info@ascentgroup.vc</Link>
                         </div>
                         <div className={`text-[12px]/[199%] text-center lg:text-left`}>

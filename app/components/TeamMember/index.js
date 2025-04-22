@@ -13,7 +13,7 @@ const TeamMember = ({ data }) => {
         <>
             <div 
                 className={`${styles.teamMember} cursor-pointer h-[250px] md:h-[400px] overflow-hidden flex flex-col items-center transition-all duration-300 group relative`} 
-                onClick={() => setShowPopup(true)}
+                onClick={() => setShowPopup(true)} data-aos='fade-up'
             >
                 <div className="absolute bottom-0 right-0 opacity-0 translate-x-[10px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width={171} height={275} viewBox="0 0 171 275" fill="none">

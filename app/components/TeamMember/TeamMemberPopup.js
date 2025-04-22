@@ -5,9 +5,9 @@ import styles from "./TeamMember.module.scss";
 
 const TeamMemberPopup = ({ member, onClose }) => {
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center md:p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center md:p-4 w-full h-full">
             <div className="absolute w-full h-full bg-black/80 cursor-pointer" onClick={onClose}></div>
-            <div className={`${styles.teamMemberPopup} max-h-screen overflow-y-auto sm:rounded-md border border-[#B3B3B3]`}>
+            <div className={`${styles.teamMemberPopup} max-h-screen max-md:overflow-y-auto sm:rounded-md border border-[#B3B3B3]`}>
                 <div className="fixed sm:absolute top-2 right-2 z-10 md:-top-10 md:right-0">
                     <button onClick={onClose} className="cursor-pointer" >
                         <svg xmlns="http://www.w3.org/2000/svg" width={31} height={31} viewBox="0 0 31 31" fill="none" className="sm:hidden block scale-[70%]">
