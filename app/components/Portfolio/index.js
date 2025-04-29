@@ -20,7 +20,7 @@ const Portofolio = () => {
         fetcher
     );
 
-    console.log(data);
+    // console.log(data);
 
     const [currentCategory, setCurrentCategory] = useState(null);
     const [products, setProducts] = useState([]);
@@ -61,7 +61,7 @@ const Portofolio = () => {
         }
     }, [data]);
 
-    console.log(filteredProducts);
+    // console.log(filteredProducts);
 
     return (
         <section className='pb-10 sm:pb-[98px]'>
