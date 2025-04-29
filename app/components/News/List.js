@@ -40,7 +40,7 @@ const NewsList = () => {
         setLoading(true);
         // Simulate loading delay
         setTimeout(() => {
-            setVisibleItems((prev) => Math.min(prev + 3, data?.posts?.length || 0));
+            setVisibleItems((prev) => Math.min(prev + 3, data?.data?.length || 0));
             setLoading(false);
         }, 800);
     };

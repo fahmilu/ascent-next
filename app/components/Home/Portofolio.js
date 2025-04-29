@@ -12,7 +12,7 @@ const getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const Portofolio = () => {
+const Portofolio = ({title, title_value}) => {
     const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API}/portfolios`,
         fetcher
     );
@@ -22,7 +22,7 @@ const Portofolio = () => {
             <div className="container">
                 <div className={`flex w-full flex-col md:flex-row gap-[40px] md:gap-[85px]`}>
                     <div className={`flex-shrink min-w-[290px] flex flex-col items-start gap-[73px]`}>
-                        <h2 className={`text-[24px] md:text-[32px] font-medium leading-[150%] text-white border-b border-white pb-[18px] w-fit pr-10 md:w-full`} data-aos="fade-up" data-aos-delay="500">Portofolio</h2>
+                        <h2 className={`text-[24px] md:text-[32px] font-medium leading-[150%] text-white border-b border-white pb-[18px] w-fit pr-10 md:w-full`} data-aos="fade-up" data-aos-delay="500">{title}</h2>
                         <Link href="/portfolio" className={`text-[16px] md:text-[18px] font-medium leading-[150%] text-white bg-[#F00] px-[20px] py-[10px] rounded-[8px] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] hover:bg-[#840000] hidden md:block`} data-aos="fade-up" data-aos-delay="1000">VIEW ALL PORTFOLIO →</Link>
                     </div>
                     {!data ? 
@@ -59,7 +59,7 @@ const Portofolio = () => {
                     <Link href="/portfolio" className={`text-[16px] md:text-[18px] font-medium leading-[150%] text-white bg-[#F00] px-[20px] py-[10px] rounded-[8px] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] hover:bg-[#840000] mx-auto md:hidden`} data-aos="fade-up" data-aos-delay="1000">VIEW ALL PORTFOLIO →</Link>
                 </div>
             </div>
-            <Facts />
+            <Facts title={title_value} />
         </div>
     );
 };

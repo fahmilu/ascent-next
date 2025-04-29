@@ -91,7 +91,7 @@ export default async function Page({ params }) {
                                     <h2 className="title-section !mb-[20px]">{portfolio.data.title}</h2>
                                 )}
                                 {portfolio.data.intro && (
-                                <h3 className="text-[20px] font-medium leading-[141%] mb-[20px]">Integrated ERP Software in Indonesia and SEA</h3>
+                                <h3 className="text-[20px] font-medium leading-[141%] mb-[20px]">{portfolio.data.intro}</h3>
                                 )}
                                 <div className="content-portfolio" dangerouslySetInnerHTML={{ __html: portfolio.data.description }} />
                             </div>

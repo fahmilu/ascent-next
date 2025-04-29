@@ -123,3 +123,9 @@ body {
   border: 1px solid #B3B3B3;
   background: linear-gradient(180deg, #F2F2F2 0%, #F9F9F9 38.46%, #FFF 86.06%);
 }
+
+.banner-title {
+  strong {
+    @apply font-semibold;
+  }
+}

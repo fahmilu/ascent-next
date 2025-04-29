@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const Testimonial = () => {
+const Testimonial = ({title}) => {
   const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API}/testimonials`,
     fetcher
   );
@@ -44,7 +44,7 @@ const Testimonial = () => {
   return (
     <section className="pt-[50px] pb-[80px] md:pt-[100px] md:pb-[150px] z-10 relative">
       <div className="container">
-        <h2 className="title-section" data-aos="fade-up" data-aos-delay="100">Our Value</h2>
+        <h2 className="title-section" data-aos="fade-up" data-aos-delay="100">{title}</h2>
         <div className="slider-container px-5 lg:px-0">
           <Slider {...settings}>
             {data.data.slice(0, 6).map((item) => (

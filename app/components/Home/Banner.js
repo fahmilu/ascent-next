@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
-const Banner = () => {
+const Banner = ({title=`Advancing <br />the Next Wave <br />of <strong>Innovation</strong>`}) => {
     const [scrollY, setScrollY] = useState(0);
     const animationFrameId = useRef();
     const lastScrollY = useRef(0);
@@ -40,11 +40,8 @@ const Banner = () => {
                     <div className={`absolute top-[30px] left-[-60px] w-[45px] aspect-square animate-bounce`}>
                         <Image src="/imgs/down-arrow.png" alt="Home Banner" fill  data-aos="fade-down"  data-aos-delay="1500" />
                     </div>
-                    <h1 className="text-white text-[32px]/[150%] sm:text-[48px]/[150%] lg:text-[68px]/[87px] font-normal max-w-[690px]"  data-aos="fade-down" data-aos-delay="1000">
-                    Advancing <br />
-                    the Next Wave <br />
-                    of <span className="font-semibold">Innovation</span>
-                    </h1>
+                    
+                    <h1 className="text-white text-[32px]/[150%] sm:text-[48px]/[150%] lg:text-[68px]/[87px] font-normal max-w-[690px] banner-title"  data-aos="fade-down" data-aos-delay="1000" dangerouslySetInnerHTML={{ __html: title }}></h1>
                 </div>
                 <div 
                     className={`absolute z-10 bottom-[-62px] right-[-40%] sm:right-[-93px] w-[250px] sm:w-[400px] lg:w-[600px] aspect-square will-change-transform`} 

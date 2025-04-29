@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { formatDate } from "@/utils/date";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const LatestNews = () => {
+const LatestNews = ({title}) => {
     const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API}/news?featured=1`,
         fetcher
     );
@@ -18,7 +18,7 @@ const LatestNews = () => {
                 <div className={`absolute hidden lg:block -top-[1200px] -right-[1000px] w-[1900px] h-[1900px] pointer-events-none`}>
                     <Image src={`/imgs/big-ornament.svg`} alt={`ornament`} fill className={`object-cover`} />
                 </div>
-                <h2 className="title-section z-10 relative" data-aos="fade-up" data-aos-delay="100">Featured Articles</h2>
+                <h2 className="title-section z-10 relative" data-aos="fade-up" data-aos-delay="100">{title}</h2>
                 <div className=' z-10 relative'>
                     {!data ?
                         <div className={`text-white text-[16px] flex-col items-center justify-center font-medium leading-[150%] text-center flex-grow`}>

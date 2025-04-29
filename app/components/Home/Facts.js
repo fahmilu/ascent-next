@@ -4,13 +4,13 @@ import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const Facts = () => {
+const Facts = ({title}) => {
     const { data, error } = useSWR(`${process.env.NEXT_PUBLIC_API}/values`, fetcher);
     return (
         <div className={`container mt-20 sm:mt-[140px]`}>
             <div className={`flex flex-col xl:flex-row gap-10 xl:gap-[85px]`}>
                 <div className={`flex-shrink md:pt-[28px] md:min-w-[425px] xl:order-last flex-col flex items-start justify-between gap-10`} data-aos="fade-up" data-aos-delay="500">
-                    <h2 className={`title-section !text-white w-full text-center md:text-left`}>We empower Ideas First, Collaborative Ventures, with Long Term Capital</h2>
+                    <h2 className={`title-section !text-white w-full text-center md:text-left`}>{title}</h2>
                     <Link href="/contact" className={`text-[16px] md:text-[18px] font-medium leading-[150%] text-white bg-[#F00] px-[20px] py-[10px] rounded-[8px] shadow-[0_1px_2px_0_rgba(0,0,0,0.05)] hover:bg-[#840000] hidden md:block`}>PARTNER WITH US →</Link>
                 </div>
                 {!data ? 

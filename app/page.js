@@ -11,13 +11,16 @@ export async function generateMetadata() {
   }
 }
 
-export default function Home() {
+export default async function Home() {
+  const home = await fetch(`${process.env.NEXT_PUBLIC_API}/pages/home`).then((res) => res.json());
+
+  console.log(home.data);
   return (
     <div className={`home-page`}>
-      <Banner />
-      <Portofolio />
-      <Testimonial />
-      <LatestNews />
+      <Banner title={home.data.components[0].data.title || 'Advancing <br />the Next Wave <br />of <strong>Innovation</strong>'} />
+      <Portofolio title={home.data.components[1].data.title} title_value={home.data.components[2].data.title} />
+      <Testimonial title={home.data.components[3].data.title} />
+      <LatestNews title={home.data.components[4].data.title} />
     </div>
   );
 }
