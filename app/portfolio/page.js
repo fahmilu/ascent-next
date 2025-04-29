@@ -1,5 +1,4 @@
-import Banner from "@/components/Banner";
-import PortfolioComponent from "@/components/Portfolio";
+import PortfolioPageIndex from "@/components/Pages/Portfolio";
 
 export async function generateMetadata() {   
     const portfolio = await fetch(`${process.env.NEXT_PUBLIC_API}/pages/our-portfolio`).then((res) => res.json());
@@ -10,12 +9,8 @@ export async function generateMetadata() {
   }
 
 const Portfolio = async () => {
-    const portfolio = await fetch(`${process.env.NEXT_PUBLIC_API}/pages/our-portfolio`).then((res) => res.json());
     return (
-        <>
-            <Banner title={portfolio.data.title} />
-            <PortfolioComponent />
-        </>
+      <PortfolioPageIndex />
     );
 }
 
