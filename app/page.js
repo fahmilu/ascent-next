@@ -14,7 +14,6 @@ export async function generateMetadata() {
 export default async function Home() {
   const home = await fetch(`${process.env.NEXT_PUBLIC_API}/pages/home`).then((res) => res.json());
 
-  console.log(home.data);
   return (
     <div className={`home-page`}>
       <Banner title={home.data.components[0].data.title || 'Advancing <br />the Next Wave <br />of <strong>Innovation</strong>'} />

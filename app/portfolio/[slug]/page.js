@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
     const { slug } = await params
     const portfolio = await fetch(`${process.env.NEXT_PUBLIC_API}/portfolios/${slug}`).then((res) => res.json());
-    console.log(portfolio);
+    // console.log(portfolio);
     return (
         <>
             <Banner title={'Our Portfolio'} />

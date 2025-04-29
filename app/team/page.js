@@ -13,6 +13,8 @@ const TeamPage = async () => {
   const data = await fetch(`${process.env.NEXT_PUBLIC_API}/pages/our-team`).then((res) => res.json());
   const teams = await fetch(`${process.env.NEXT_PUBLIC_API}/teams`).then((res) => res.json());
 
+  console.log(data);
+
   return (
     <>
       <Banner title={data.data.title ? data.data.title : 'Our Team'} />
