@@ -11,7 +11,7 @@ const NewsList = () => {
         fetcher
     );
 
-    const [visibleItems, setVisibleItems] = useState(5);
+    const [visibleItems, setVisibleItems] = useState(12);
     const [loading, setLoading] = useState(false);
     const loaderRef = useRef(null);
 
