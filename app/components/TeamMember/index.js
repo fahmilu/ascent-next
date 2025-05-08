@@ -26,7 +26,7 @@ const TeamMember = ({ data }) => {
                         </defs>
                     </svg>
                 </div>
-                <div className="flex-shrink p-4 sm:pt-6 sm:px-[30px] sm:pb-[10px] relative">
+                <div className="flex-shrink p-4 sm:pt-6 sm:px-[30px] sm:pb-[10px] relative w-full">
                     <h3 className="text-[14px]/[141%] sm:text-[20px]/[141%] font-bold group-hover:text-white transition-all duration-300">{data.name}</h3>
                     <p className="text-[10px]/[155%] line-clamp-2 sm:text-base/[155%] group-hover:text-white transition-all duration-300">{data.position}</p>
                 </div>
