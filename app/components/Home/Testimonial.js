@@ -42,27 +42,31 @@ const Testimonial = ({title}) => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <section className="pt-[50px] pb-[80px] md:pt-[100px] md:pb-[150px] z-10 relative">
-      <div className="container">
-        <h2 className="title-section" data-aos="fade-up" data-aos-delay="100">{title}</h2>
-        <div className="slider-container px-5 lg:px-0">
-          <Slider {...settings}>
-            {data.data.slice(0, 6).map((item) => (
-              <div key={item.id} className="sm:px-4 h-full">
-                <div className="card-testimonial" data-aos="fade-up" data-aos-delay="100">
-                  <div className="avatar">
-                    <Image src={item.image_url} alt={item.name} fill className="object-cover" />
+    <>
+      {data.data.length > 0 && (
+        <section className="pt-[50px] pb-[80px] md:pt-[100px] md:pb-[150px] z-10 relative">
+          <div className="container">
+            <h2 className="title-section" data-aos="fade-up" data-aos-delay="100">{title}</h2>
+          <div className="slider-container px-5 lg:px-0">
+            <Slider {...settings}>
+              {data.data.slice(0, 6).map((item) => (
+                <div key={item.id} className="sm:px-4 h-full">
+                  <div className="card-testimonial" data-aos="fade-up" data-aos-delay="100">
+                    <div className="avatar">
+                      <Image src={item.image_url} alt={item.name} fill className="object-cover" />
+                    </div>
+                    <div className="text-[12px] leading-[155%] mb-5">{item.content}</div>
+                    <div className="text-[12px] leading-[155%] font-bold">{item.name}</div>
+                    <div className="text-[12px] leading-[155%]">{item.position}</div>
                   </div>
-                  <div className="text-[12px] leading-[155%] mb-5">{item.content}</div>
-                  <div className="text-[12px] leading-[155%] font-bold">{item.name}</div>
-                  <div className="text-[12px] leading-[155%]">{item.position}</div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      )}
+    </>
   );
 };
 
