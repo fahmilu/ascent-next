@@ -57,7 +57,7 @@ const PortfolioDetailPageIndex = ({ slug }) => {
                             )}
                             {data.data.founders.length > 0 && (
                                 <Widget title="Founder">
-                                    <div className="flex flex-col items-center md:items-start gap-2">
+                                    <div className="flex flex-col items-start gap-2">
                                         {data.data.founders.map((founder) => (
                                             <Linkedin key={founder.id} name={founder.name} linkedin={founder.linkedin_url} />
                                         ))}
